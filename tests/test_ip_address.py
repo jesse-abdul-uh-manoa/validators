@@ -204,3 +204,78 @@ def test_returns_true_on_valid_public_ipv4_address(address: str, private: bool):
 def test_returns_failed_validation_on_invalid_public_ipv4_address(address: str, private: bool):
     """Test returns failed validation on private ipv4 address."""
     assert isinstance(ipv4(address, private=private), ValidationError)
+
+
+
+@pytest.mark.parametrize(
+    ("address", "strict", "cidr"),
+    [
+        ("10.1.1.1/24/", True, True),
+        ("192.168.1.1", True, True),
+        ("169.254/.1.1/128", True, True),
+        ("127.0./0.1/2819232", True, True),
+        ("0.0.0.0", True, True),
+    ],
+)
+def test_returns_failed_validation_on_invalid_cidr_ipv4_address(address: str, strict: bool, cidr: bool):
+    """Test returns failed validation on invalid CIDR ipv4 address when strict mode is enabled."""
+    assert isinstance(ipv4(address, strict=strict, cidr=cidr), ValidationError)
+
+@pytest.mark.parametrize(
+    ("address", "cidr", "strict", "host_bit"),
+    [
+        ("::1/128/", True, True, True),
+        ("::1", True, True, True),
+        ("dead:beef:0:0:0:0/:42:1/8", True, True, True),
+        ("abcd:ef::42:1/3/2", True, True, True),
+        ("0:0:0:0:0:ffff:1.2.3.416", True, True, True),
+        ("2001:0db8:85a3:0000:0000:8a2e:0370:7334/64/", True, True, True),
+        ("::192.168.30.2128", True, True, True),
+    ],
+)
+def test_returns_failed_validation_on_invalid_cidr_ipv6_address(address: str, strict: bool, cidr: bool, host_bit: bool):
+    """Test returns failed validation on invalid CIDR ipv6 address when strict mode is enabled."""
+    assert isinstance(ipv6(address, strict=strict, cidr=cidr, host_bit=host_bit), ValidationError)
+
+@pytest.mark.parametrize(
+    ("address"),
+    [
+        (""), 
+        (None),
+    ],
+)
+def test_returns_failed_validation_on_blank_none_ipv4_address(address: str):
+    """Test returns failed validation on blank/None ipv4 address."""
+    assert isinstance(ipv4(address), ValidationError)
+
+@pytest.mark.parametrize(
+    ("address"),
+    [
+        (""), 
+        (None),
+    ],
+)
+def test_returns_failed_validation_on_blank_none_ipv6_address(address: str):
+    """Test returns failed validation on blank/None ipv6 address."""
+    assert isinstance(ipv6(address), ValidationError)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

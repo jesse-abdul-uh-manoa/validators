@@ -1,0 +1,13 @@
+attrs==25.4.0
+colorama==0.4.6
+coverage==7.11.0
+hypothesis==6.142.4
+idna==3.11
+iniconfig==2.3.0
+packaging==25.0
+pluggy==1.6.0
+Pygments==2.19.2
+pytest==8.4.2
+pytest-cov==7.0.0
+sortedcontainers==2.4.0
+-e git+ssh://git@github.com/jesseabdul/validators.git@9bc7e82f7bf0fb3990eb287e11323fb6ca1c87cf#egg=validators

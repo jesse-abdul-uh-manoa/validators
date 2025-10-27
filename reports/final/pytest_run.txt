@@ -1,0 +1,1031 @@
+.................................FFFFFFFFFFFFFFFFF...................... [  6%]
+........................................................................ [ 12%]
+........................................................................ [ 19%]
+........................................................................ [ 25%]
+........................................................................ [ 31%]
+........................................................................ [ 38%]
+........................................................................ [ 44%]
+........................................................................ [ 51%]
+........................................................................ [ 57%]
+........................................................................ [ 63%]
+..................................................xxxx.................. [ 70%]
+........................................................................ [ 76%]
+........................................................................ [ 82%]
+........................xxx....xx..xxx..xx.x............................ [ 89%]
+........................................................................ [ 95%]
+................................................                         [100%]
+================================== FAILURES ===================================
+_ test_returns_true_on_valid_eth_address[0x8ba1f109551bd432803012645ac136ddd64dba72] _
+
+value = '0x8ba1f109551bd432803012645ac136ddd64dba72'
+
+    @pytest.mark.parametrize(
+        "value",
+        [
+            "0x8ba1f109551bd432803012645ac136ddd64dba72",
+            "0x9cc14ba4f9f68ca159ea4ebf2c292a808aaeb598",
+            "0x5AEDA56215b167893e80B4fE645BA6d5Bab767DE",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+            "0x742d35Cc6634C0532925a3b844Bc454e4438f44e",
+            "0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984",
+            "0x1234567890123456789012345678901234567890",
+            "0x57Ab1ec28D129707052df4dF418D58a2D46d5f51",
+        ],
+    )
+    def test_returns_true_on_valid_eth_address(value: str):
+        """Test returns true on valid eth address."""
+>       assert eth_address(value)
+               ^^^^^^^^^^^^^^^^^^
+
+tests\crypto_addresses\test_eth_address.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\validators\utils.py:91: in wrapper
+    if func(*args, **kwargs)
+       ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = '0x8ba1f109551bd432803012645ac136ddd64dba72'
+
+    @validator
+    def eth_address(value: str, /):
+        """Return whether or not given value is a valid ethereum address.
+    
+        Full validation is implemented for ERC20 addresses.
+    
+        Examples:
+            >>> eth_address('0x9cc14ba4f9f68ca159ea4ebf2c292a808aaeb598')
+            True
+            >>> eth_address('0x8Ba1f109551bD432803012645Ac136ddd64DBa72')
+            ValidationError(func=eth_address, args={'value': '0x8Ba1f109551bD432803012645Ac136ddd64DBa72'})
+    
+        Args:
+            value:
+                Ethereum address string to validate.
+    
+        Returns:
+            (Literal[True]): If `value` is a valid ethereum address.
+            (ValidationError): If `value` is an invalid ethereum address.
+        """  # noqa: E501
+        if not _keccak_flag:
+>           raise ImportError(
+                "Do `pip install validators[crypto-eth-addresses]` to perform `eth_address` validation."
+            )
+E           ImportError: Do `pip install validators[crypto-eth-addresses]` to perform `eth_address` validation.
+
+src\validators\crypto_addresses\eth_address.py:54: ImportError
+_ test_returns_true_on_valid_eth_address[0x9cc14ba4f9f68ca159ea4ebf2c292a808aaeb598] _
+
+value = '0x9cc14ba4f9f68ca159ea4ebf2c292a808aaeb598'
+
+    @pytest.mark.parametrize(
+        "value",
+        [
+            "0x8ba1f109551bd432803012645ac136ddd64dba72",
+            "0x9cc14ba4f9f68ca159ea4ebf2c292a808aaeb598",
+            "0x5AEDA56215b167893e80B4fE645BA6d5Bab767DE",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+            "0x742d35Cc6634C0532925a3b844Bc454e4438f44e",
+            "0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984",
+            "0x1234567890123456789012345678901234567890",
+            "0x57Ab1ec28D129707052df4dF418D58a2D46d5f51",
+        ],
+    )
+    def test_returns_true_on_valid_eth_address(value: str):
+        """Test returns true on valid eth address."""
+>       assert eth_address(value)
+               ^^^^^^^^^^^^^^^^^^
+
+tests\crypto_addresses\test_eth_address.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\validators\utils.py:91: in wrapper
+    if func(*args, **kwargs)
+       ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = '0x9cc14ba4f9f68ca159ea4ebf2c292a808aaeb598'
+
+    @validator
+    def eth_address(value: str, /):
+        """Return whether or not given value is a valid ethereum address.
+    
+        Full validation is implemented for ERC20 addresses.
+    
+        Examples:
+            >>> eth_address('0x9cc14ba4f9f68ca159ea4ebf2c292a808aaeb598')
+            True
+            >>> eth_address('0x8Ba1f109551bD432803012645Ac136ddd64DBa72')
+            ValidationError(func=eth_address, args={'value': '0x8Ba1f109551bD432803012645Ac136ddd64DBa72'})
+    
+        Args:
+            value:
+                Ethereum address string to validate.
+    
+        Returns:
+            (Literal[True]): If `value` is a valid ethereum address.
+            (ValidationError): If `value` is an invalid ethereum address.
+        """  # noqa: E501
+        if not _keccak_flag:
+>           raise ImportError(
+                "Do `pip install validators[crypto-eth-addresses]` to perform `eth_address` validation."
+            )
+E           ImportError: Do `pip install validators[crypto-eth-addresses]` to perform `eth_address` validation.
+
+src\validators\crypto_addresses\eth_address.py:54: ImportError
+_ test_returns_true_on_valid_eth_address[0x5AEDA56215b167893e80B4fE645BA6d5Bab767DE] _
+
+value = '0x5AEDA56215b167893e80B4fE645BA6d5Bab767DE'
+
+    @pytest.mark.parametrize(
+        "value",
+        [
+            "0x8ba1f109551bd432803012645ac136ddd64dba72",
+            "0x9cc14ba4f9f68ca159ea4ebf2c292a808aaeb598",
+            "0x5AEDA56215b167893e80B4fE645BA6d5Bab767DE",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+            "0x742d35Cc6634C0532925a3b844Bc454e4438f44e",
+            "0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984",
+            "0x1234567890123456789012345678901234567890",
+            "0x57Ab1ec28D129707052df4dF418D58a2D46d5f51",
+        ],
+    )
+    def test_returns_true_on_valid_eth_address(value: str):
+        """Test returns true on valid eth address."""
+>       assert eth_address(value)
+               ^^^^^^^^^^^^^^^^^^
+
+tests\crypto_addresses\test_eth_address.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\validators\utils.py:91: in wrapper
+    if func(*args, **kwargs)
+       ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = '0x5AEDA56215b167893e80B4fE645BA6d5Bab767DE'
+
+    @validator
+    def eth_address(value: str, /):
+        """Return whether or not given value is a valid ethereum address.
+    
+        Full validation is implemented for ERC20 addresses.
+    
+        Examples:
+            >>> eth_address('0x9cc14ba4f9f68ca159ea4ebf2c292a808aaeb598')
+            True
+            >>> eth_address('0x8Ba1f109551bD432803012645Ac136ddd64DBa72')
+            ValidationError(func=eth_address, args={'value': '0x8Ba1f109551bD432803012645Ac136ddd64DBa72'})
+    
+        Args:
+            value:
+                Ethereum address string to validate.
+    
+        Returns:
+            (Literal[True]): If `value` is a valid ethereum address.
+            (ValidationError): If `value` is an invalid ethereum address.
+        """  # noqa: E501
+        if not _keccak_flag:
+>           raise ImportError(
+                "Do `pip install validators[crypto-eth-addresses]` to perform `eth_address` validation."
+            )
+E           ImportError: Do `pip install validators[crypto-eth-addresses]` to perform `eth_address` validation.
+
+src\validators\crypto_addresses\eth_address.py:54: ImportError
+_ test_returns_true_on_valid_eth_address[0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2] _
+
+value = '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2'
+
+    @pytest.mark.parametrize(
+        "value",
+        [
+            "0x8ba1f109551bd432803012645ac136ddd64dba72",
+            "0x9cc14ba4f9f68ca159ea4ebf2c292a808aaeb598",
+            "0x5AEDA56215b167893e80B4fE645BA6d5Bab767DE",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+            "0x742d35Cc6634C0532925a3b844Bc454e4438f44e",
+            "0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984",
+            "0x1234567890123456789012345678901234567890",
+            "0x57Ab1ec28D129707052df4dF418D58a2D46d5f51",
+        ],
+    )
+    def test_returns_true_on_valid_eth_address(value: str):
+        """Test returns true on valid eth address."""
+>       assert eth_address(value)
+               ^^^^^^^^^^^^^^^^^^
+
+tests\crypto_addresses\test_eth_address.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\validators\utils.py:91: in wrapper
+    if func(*args, **kwargs)
+       ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2'
+
+    @validator
+    def eth_address(value: str, /):
+        """Return whether or not given value is a valid ethereum address.
+    
+        Full validation is implemented for ERC20 addresses.
+    
+        Examples:
+            >>> eth_address('0x9cc14ba4f9f68ca159ea4ebf2c292a808aaeb598')
+            True
+            >>> eth_address('0x8Ba1f109551bD432803012645Ac136ddd64DBa72')
+            ValidationError(func=eth_address, args={'value': '0x8Ba1f109551bD432803012645Ac136ddd64DBa72'})
+    
+        Args:
+            value:
+                Ethereum address string to validate.
+    
+        Returns:
+            (Literal[True]): If `value` is a valid ethereum address.
+            (ValidationError): If `value` is an invalid ethereum address.
+        """  # noqa: E501
+        if not _keccak_flag:
+>           raise ImportError(
+                "Do `pip install validators[crypto-eth-addresses]` to perform `eth_address` validation."
+            )
+E           ImportError: Do `pip install validators[crypto-eth-addresses]` to perform `eth_address` validation.
+
+src\validators\crypto_addresses\eth_address.py:54: ImportError
+_ test_returns_true_on_valid_eth_address[0x742d35Cc6634C0532925a3b844Bc454e4438f44e] _
+
+value = '0x742d35Cc6634C0532925a3b844Bc454e4438f44e'
+
+    @pytest.mark.parametrize(
+        "value",
+        [
+            "0x8ba1f109551bd432803012645ac136ddd64dba72",
+            "0x9cc14ba4f9f68ca159ea4ebf2c292a808aaeb598",
+            "0x5AEDA56215b167893e80B4fE645BA6d5Bab767DE",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+            "0x742d35Cc6634C0532925a3b844Bc454e4438f44e",
+            "0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984",
+            "0x1234567890123456789012345678901234567890",
+            "0x57Ab1ec28D129707052df4dF418D58a2D46d5f51",
+        ],
+    )
+    def test_returns_true_on_valid_eth_address(value: str):
+        """Test returns true on valid eth address."""
+>       assert eth_address(value)
+               ^^^^^^^^^^^^^^^^^^
+
+tests\crypto_addresses\test_eth_address.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\validators\utils.py:91: in wrapper
+    if func(*args, **kwargs)
+       ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = '0x742d35Cc6634C0532925a3b844Bc454e4438f44e'
+
+    @validator
+    def eth_address(value: str, /):
+        """Return whether or not given value is a valid ethereum address.
+    
+        Full validation is implemented for ERC20 addresses.
+    
+        Examples:
+            >>> eth_address('0x9cc14ba4f9f68ca159ea4ebf2c292a808aaeb598')
+            True
+            >>> eth_address('0x8Ba1f109551bD432803012645Ac136ddd64DBa72')
+            ValidationError(func=eth_address, args={'value': '0x8Ba1f109551bD432803012645Ac136ddd64DBa72'})
+    
+        Args:
+            value:
+                Ethereum address string to validate.
+    
+        Returns:
+            (Literal[True]): If `value` is a valid ethereum address.
+            (ValidationError): If `value` is an invalid ethereum address.
+        """  # noqa: E501
+        if not _keccak_flag:
+>           raise ImportError(
+                "Do `pip install validators[crypto-eth-addresses]` to perform `eth_address` validation."
+            )
+E           ImportError: Do `pip install validators[crypto-eth-addresses]` to perform `eth_address` validation.
+
+src\validators\crypto_addresses\eth_address.py:54: ImportError
+_ test_returns_true_on_valid_eth_address[0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984] _
+
+value = '0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984'
+
+    @pytest.mark.parametrize(
+        "value",
+        [
+            "0x8ba1f109551bd432803012645ac136ddd64dba72",
+            "0x9cc14ba4f9f68ca159ea4ebf2c292a808aaeb598",
+            "0x5AEDA56215b167893e80B4fE645BA6d5Bab767DE",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+            "0x742d35Cc6634C0532925a3b844Bc454e4438f44e",
+            "0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984",
+            "0x1234567890123456789012345678901234567890",
+            "0x57Ab1ec28D129707052df4dF418D58a2D46d5f51",
+        ],
+    )
+    def test_returns_true_on_valid_eth_address(value: str):
+        """Test returns true on valid eth address."""
+>       assert eth_address(value)
+               ^^^^^^^^^^^^^^^^^^
+
+tests\crypto_addresses\test_eth_address.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\validators\utils.py:91: in wrapper
+    if func(*args, **kwargs)
+       ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = '0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984'
+
+    @validator
+    def eth_address(value: str, /):
+        """Return whether or not given value is a valid ethereum address.
+    
+        Full validation is implemented for ERC20 addresses.
+    
+        Examples:
+            >>> eth_address('0x9cc14ba4f9f68ca159ea4ebf2c292a808aaeb598')
+            True
+            >>> eth_address('0x8Ba1f109551bD432803012645Ac136ddd64DBa72')
+            ValidationError(func=eth_address, args={'value': '0x8Ba1f109551bD432803012645Ac136ddd64DBa72'})
+    
+        Args:
+            value:
+                Ethereum address string to validate.
+    
+        Returns:
+            (Literal[True]): If `value` is a valid ethereum address.
+            (ValidationError): If `value` is an invalid ethereum address.
+        """  # noqa: E501
+        if not _keccak_flag:
+>           raise ImportError(
+                "Do `pip install validators[crypto-eth-addresses]` to perform `eth_address` validation."
+            )
+E           ImportError: Do `pip install validators[crypto-eth-addresses]` to perform `eth_address` validation.
+
+src\validators\crypto_addresses\eth_address.py:54: ImportError
+_ test_returns_true_on_valid_eth_address[0x1234567890123456789012345678901234567890] _
+
+value = '0x1234567890123456789012345678901234567890'
+
+    @pytest.mark.parametrize(
+        "value",
+        [
+            "0x8ba1f109551bd432803012645ac136ddd64dba72",
+            "0x9cc14ba4f9f68ca159ea4ebf2c292a808aaeb598",
+            "0x5AEDA56215b167893e80B4fE645BA6d5Bab767DE",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+            "0x742d35Cc6634C0532925a3b844Bc454e4438f44e",
+            "0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984",
+            "0x1234567890123456789012345678901234567890",
+            "0x57Ab1ec28D129707052df4dF418D58a2D46d5f51",
+        ],
+    )
+    def test_returns_true_on_valid_eth_address(value: str):
+        """Test returns true on valid eth address."""
+>       assert eth_address(value)
+               ^^^^^^^^^^^^^^^^^^
+
+tests\crypto_addresses\test_eth_address.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\validators\utils.py:91: in wrapper
+    if func(*args, **kwargs)
+       ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = '0x1234567890123456789012345678901234567890'
+
+    @validator
+    def eth_address(value: str, /):
+        """Return whether or not given value is a valid ethereum address.
+    
+        Full validation is implemented for ERC20 addresses.
+    
+        Examples:
+            >>> eth_address('0x9cc14ba4f9f68ca159ea4ebf2c292a808aaeb598')
+            True
+            >>> eth_address('0x8Ba1f109551bD432803012645Ac136ddd64DBa72')
+            ValidationError(func=eth_address, args={'value': '0x8Ba1f109551bD432803012645Ac136ddd64DBa72'})
+    
+        Args:
+            value:
+                Ethereum address string to validate.
+    
+        Returns:
+            (Literal[True]): If `value` is a valid ethereum address.
+            (ValidationError): If `value` is an invalid ethereum address.
+        """  # noqa: E501
+        if not _keccak_flag:
+>           raise ImportError(
+                "Do `pip install validators[crypto-eth-addresses]` to perform `eth_address` validation."
+            )
+E           ImportError: Do `pip install validators[crypto-eth-addresses]` to perform `eth_address` validation.
+
+src\validators\crypto_addresses\eth_address.py:54: ImportError
+_ test_returns_true_on_valid_eth_address[0x57Ab1ec28D129707052df4dF418D58a2D46d5f51] _
+
+value = '0x57Ab1ec28D129707052df4dF418D58a2D46d5f51'
+
+    @pytest.mark.parametrize(
+        "value",
+        [
+            "0x8ba1f109551bd432803012645ac136ddd64dba72",
+            "0x9cc14ba4f9f68ca159ea4ebf2c292a808aaeb598",
+            "0x5AEDA56215b167893e80B4fE645BA6d5Bab767DE",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+            "0x742d35Cc6634C0532925a3b844Bc454e4438f44e",
+            "0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984",
+            "0x1234567890123456789012345678901234567890",
+            "0x57Ab1ec28D129707052df4dF418D58a2D46d5f51",
+        ],
+    )
+    def test_returns_true_on_valid_eth_address(value: str):
+        """Test returns true on valid eth address."""
+>       assert eth_address(value)
+               ^^^^^^^^^^^^^^^^^^
+
+tests\crypto_addresses\test_eth_address.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\validators\utils.py:91: in wrapper
+    if func(*args, **kwargs)
+       ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = '0x57Ab1ec28D129707052df4dF418D58a2D46d5f51'
+
+    @validator
+    def eth_address(value: str, /):
+        """Return whether or not given value is a valid ethereum address.
+    
+        Full validation is implemented for ERC20 addresses.
+    
+        Examples:
+            >>> eth_address('0x9cc14ba4f9f68ca159ea4ebf2c292a808aaeb598')
+            True
+            >>> eth_address('0x8Ba1f109551bD432803012645Ac136ddd64DBa72')
+            ValidationError(func=eth_address, args={'value': '0x8Ba1f109551bD432803012645Ac136ddd64DBa72'})
+    
+        Args:
+            value:
+                Ethereum address string to validate.
+    
+        Returns:
+            (Literal[True]): If `value` is a valid ethereum address.
+            (ValidationError): If `value` is an invalid ethereum address.
+        """  # noqa: E501
+        if not _keccak_flag:
+>           raise ImportError(
+                "Do `pip install validators[crypto-eth-addresses]` to perform `eth_address` validation."
+            )
+E           ImportError: Do `pip install validators[crypto-eth-addresses]` to perform `eth_address` validation.
+
+src\validators\crypto_addresses\eth_address.py:54: ImportError
+_ test_returns_failed_validation_on_invalid_eth_address[0x742d35Cc6634C0532925a3b844Bc454e4438f44g] _
+
+value = '0x742d35Cc6634C0532925a3b844Bc454e4438f44g'
+
+    @pytest.mark.parametrize(
+        "value",
+        [
+            "0x742d35Cc6634C0532925a3b844Bc454e4438f44g",
+            "0x742d35Cc6634C0532925a3b844Bc454e4438f44",
+            "0xAbcdefg1234567890Abcdefg1234567890Abcdefg",
+            "0x7c8EE9977c6f96b6b9774b3e8e4Cc9B93B12b2c72",
+            "0x80fBD7F8B3f81D0e1d6EACAb69AF104A6508AFB1",
+            "0x7c8EE9977c6f96b6b9774b3e8e4Cc9B93B12b2c7g",
+            "0x7c8EE9977c6f96b6b9774b3e8e4Cc9B93B12b2c",
+            "0x7Fb21a171205f3B8d8E4d88A2d2f8A56E45DdB5c",
+            "validators.eth",
+        ],
+    )
+    def test_returns_failed_validation_on_invalid_eth_address(value: str):
+        """Test returns failed validation on invalid eth address."""
+>       assert isinstance(eth_address(value), ValidationError)
+                          ^^^^^^^^^^^^^^^^^^
+
+tests\crypto_addresses\test_eth_address.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\validators\utils.py:91: in wrapper
+    if func(*args, **kwargs)
+       ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = '0x742d35Cc6634C0532925a3b844Bc454e4438f44g'
+
+    @validator
+    def eth_address(value: str, /):
+        """Return whether or not given value is a valid ethereum address.
+    
+        Full validation is implemented for ERC20 addresses.
+    
+        Examples:
+            >>> eth_address('0x9cc14ba4f9f68ca159ea4ebf2c292a808aaeb598')
+            True
+            >>> eth_address('0x8Ba1f109551bD432803012645Ac136ddd64DBa72')
+            ValidationError(func=eth_address, args={'value': '0x8Ba1f109551bD432803012645Ac136ddd64DBa72'})
+    
+        Args:
+            value:
+                Ethereum address string to validate.
+    
+        Returns:
+            (Literal[True]): If `value` is a valid ethereum address.
+            (ValidationError): If `value` is an invalid ethereum address.
+        """  # noqa: E501
+        if not _keccak_flag:
+>           raise ImportError(
+                "Do `pip install validators[crypto-eth-addresses]` to perform `eth_address` validation."
+            )
+E           ImportError: Do `pip install validators[crypto-eth-addresses]` to perform `eth_address` validation.
+
+src\validators\crypto_addresses\eth_address.py:54: ImportError
+_ test_returns_failed_validation_on_invalid_eth_address[0x742d35Cc6634C0532925a3b844Bc454e4438f44] _
+
+value = '0x742d35Cc6634C0532925a3b844Bc454e4438f44'
+
+    @pytest.mark.parametrize(
+        "value",
+        [
+            "0x742d35Cc6634C0532925a3b844Bc454e4438f44g",
+            "0x742d35Cc6634C0532925a3b844Bc454e4438f44",
+            "0xAbcdefg1234567890Abcdefg1234567890Abcdefg",
+            "0x7c8EE9977c6f96b6b9774b3e8e4Cc9B93B12b2c72",
+            "0x80fBD7F8B3f81D0e1d6EACAb69AF104A6508AFB1",
+            "0x7c8EE9977c6f96b6b9774b3e8e4Cc9B93B12b2c7g",
+            "0x7c8EE9977c6f96b6b9774b3e8e4Cc9B93B12b2c",
+            "0x7Fb21a171205f3B8d8E4d88A2d2f8A56E45DdB5c",
+            "validators.eth",
+        ],
+    )
+    def test_returns_failed_validation_on_invalid_eth_address(value: str):
+        """Test returns failed validation on invalid eth address."""
+>       assert isinstance(eth_address(value), ValidationError)
+                          ^^^^^^^^^^^^^^^^^^
+
+tests\crypto_addresses\test_eth_address.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\validators\utils.py:91: in wrapper
+    if func(*args, **kwargs)
+       ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = '0x742d35Cc6634C0532925a3b844Bc454e4438f44'
+
+    @validator
+    def eth_address(value: str, /):
+        """Return whether or not given value is a valid ethereum address.
+    
+        Full validation is implemented for ERC20 addresses.
+    
+        Examples:
+            >>> eth_address('0x9cc14ba4f9f68ca159ea4ebf2c292a808aaeb598')
+            True
+            >>> eth_address('0x8Ba1f109551bD432803012645Ac136ddd64DBa72')
+            ValidationError(func=eth_address, args={'value': '0x8Ba1f109551bD432803012645Ac136ddd64DBa72'})
+    
+        Args:
+            value:
+                Ethereum address string to validate.
+    
+        Returns:
+            (Literal[True]): If `value` is a valid ethereum address.
+            (ValidationError): If `value` is an invalid ethereum address.
+        """  # noqa: E501
+        if not _keccak_flag:
+>           raise ImportError(
+                "Do `pip install validators[crypto-eth-addresses]` to perform `eth_address` validation."
+            )
+E           ImportError: Do `pip install validators[crypto-eth-addresses]` to perform `eth_address` validation.
+
+src\validators\crypto_addresses\eth_address.py:54: ImportError
+_ test_returns_failed_validation_on_invalid_eth_address[0xAbcdefg1234567890Abcdefg1234567890Abcdefg] _
+
+value = '0xAbcdefg1234567890Abcdefg1234567890Abcdefg'
+
+    @pytest.mark.parametrize(
+        "value",
+        [
+            "0x742d35Cc6634C0532925a3b844Bc454e4438f44g",
+            "0x742d35Cc6634C0532925a3b844Bc454e4438f44",
+            "0xAbcdefg1234567890Abcdefg1234567890Abcdefg",
+            "0x7c8EE9977c6f96b6b9774b3e8e4Cc9B93B12b2c72",
+            "0x80fBD7F8B3f81D0e1d6EACAb69AF104A6508AFB1",
+            "0x7c8EE9977c6f96b6b9774b3e8e4Cc9B93B12b2c7g",
+            "0x7c8EE9977c6f96b6b9774b3e8e4Cc9B93B12b2c",
+            "0x7Fb21a171205f3B8d8E4d88A2d2f8A56E45DdB5c",
+            "validators.eth",
+        ],
+    )
+    def test_returns_failed_validation_on_invalid_eth_address(value: str):
+        """Test returns failed validation on invalid eth address."""
+>       assert isinstance(eth_address(value), ValidationError)
+                          ^^^^^^^^^^^^^^^^^^
+
+tests\crypto_addresses\test_eth_address.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\validators\utils.py:91: in wrapper
+    if func(*args, **kwargs)
+       ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = '0xAbcdefg1234567890Abcdefg1234567890Abcdefg'
+
+    @validator
+    def eth_address(value: str, /):
+        """Return whether or not given value is a valid ethereum address.
+    
+        Full validation is implemented for ERC20 addresses.
+    
+        Examples:
+            >>> eth_address('0x9cc14ba4f9f68ca159ea4ebf2c292a808aaeb598')
+            True
+            >>> eth_address('0x8Ba1f109551bD432803012645Ac136ddd64DBa72')
+            ValidationError(func=eth_address, args={'value': '0x8Ba1f109551bD432803012645Ac136ddd64DBa72'})
+    
+        Args:
+            value:
+                Ethereum address string to validate.
+    
+        Returns:
+            (Literal[True]): If `value` is a valid ethereum address.
+            (ValidationError): If `value` is an invalid ethereum address.
+        """  # noqa: E501
+        if not _keccak_flag:
+>           raise ImportError(
+                "Do `pip install validators[crypto-eth-addresses]` to perform `eth_address` validation."
+            )
+E           ImportError: Do `pip install validators[crypto-eth-addresses]` to perform `eth_address` validation.
+
+src\validators\crypto_addresses\eth_address.py:54: ImportError
+_ test_returns_failed_validation_on_invalid_eth_address[0x7c8EE9977c6f96b6b9774b3e8e4Cc9B93B12b2c72] _
+
+value = '0x7c8EE9977c6f96b6b9774b3e8e4Cc9B93B12b2c72'
+
+    @pytest.mark.parametrize(
+        "value",
+        [
+            "0x742d35Cc6634C0532925a3b844Bc454e4438f44g",
+            "0x742d35Cc6634C0532925a3b844Bc454e4438f44",
+            "0xAbcdefg1234567890Abcdefg1234567890Abcdefg",
+            "0x7c8EE9977c6f96b6b9774b3e8e4Cc9B93B12b2c72",
+            "0x80fBD7F8B3f81D0e1d6EACAb69AF104A6508AFB1",
+            "0x7c8EE9977c6f96b6b9774b3e8e4Cc9B93B12b2c7g",
+            "0x7c8EE9977c6f96b6b9774b3e8e4Cc9B93B12b2c",
+            "0x7Fb21a171205f3B8d8E4d88A2d2f8A56E45DdB5c",
+            "validators.eth",
+        ],
+    )
+    def test_returns_failed_validation_on_invalid_eth_address(value: str):
+        """Test returns failed validation on invalid eth address."""
+>       assert isinstance(eth_address(value), ValidationError)
+                          ^^^^^^^^^^^^^^^^^^
+
+tests\crypto_addresses\test_eth_address.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\validators\utils.py:91: in wrapper
+    if func(*args, **kwargs)
+       ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = '0x7c8EE9977c6f96b6b9774b3e8e4Cc9B93B12b2c72'
+
+    @validator
+    def eth_address(value: str, /):
+        """Return whether or not given value is a valid ethereum address.
+    
+        Full validation is implemented for ERC20 addresses.
+    
+        Examples:
+            >>> eth_address('0x9cc14ba4f9f68ca159ea4ebf2c292a808aaeb598')
+            True
+            >>> eth_address('0x8Ba1f109551bD432803012645Ac136ddd64DBa72')
+            ValidationError(func=eth_address, args={'value': '0x8Ba1f109551bD432803012645Ac136ddd64DBa72'})
+    
+        Args:
+            value:
+                Ethereum address string to validate.
+    
+        Returns:
+            (Literal[True]): If `value` is a valid ethereum address.
+            (ValidationError): If `value` is an invalid ethereum address.
+        """  # noqa: E501
+        if not _keccak_flag:
+>           raise ImportError(
+                "Do `pip install validators[crypto-eth-addresses]` to perform `eth_address` validation."
+            )
+E           ImportError: Do `pip install validators[crypto-eth-addresses]` to perform `eth_address` validation.
+
+src\validators\crypto_addresses\eth_address.py:54: ImportError
+_ test_returns_failed_validation_on_invalid_eth_address[0x80fBD7F8B3f81D0e1d6EACAb69AF104A6508AFB1] _
+
+value = '0x80fBD7F8B3f81D0e1d6EACAb69AF104A6508AFB1'
+
+    @pytest.mark.parametrize(
+        "value",
+        [
+            "0x742d35Cc6634C0532925a3b844Bc454e4438f44g",
+            "0x742d35Cc6634C0532925a3b844Bc454e4438f44",
+            "0xAbcdefg1234567890Abcdefg1234567890Abcdefg",
+            "0x7c8EE9977c6f96b6b9774b3e8e4Cc9B93B12b2c72",
+            "0x80fBD7F8B3f81D0e1d6EACAb69AF104A6508AFB1",
+            "0x7c8EE9977c6f96b6b9774b3e8e4Cc9B93B12b2c7g",
+            "0x7c8EE9977c6f96b6b9774b3e8e4Cc9B93B12b2c",
+            "0x7Fb21a171205f3B8d8E4d88A2d2f8A56E45DdB5c",
+            "validators.eth",
+        ],
+    )
+    def test_returns_failed_validation_on_invalid_eth_address(value: str):
+        """Test returns failed validation on invalid eth address."""
+>       assert isinstance(eth_address(value), ValidationError)
+                          ^^^^^^^^^^^^^^^^^^
+
+tests\crypto_addresses\test_eth_address.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\validators\utils.py:91: in wrapper
+    if func(*args, **kwargs)
+       ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = '0x80fBD7F8B3f81D0e1d6EACAb69AF104A6508AFB1'
+
+    @validator
+    def eth_address(value: str, /):
+        """Return whether or not given value is a valid ethereum address.
+    
+        Full validation is implemented for ERC20 addresses.
+    
+        Examples:
+            >>> eth_address('0x9cc14ba4f9f68ca159ea4ebf2c292a808aaeb598')
+            True
+            >>> eth_address('0x8Ba1f109551bD432803012645Ac136ddd64DBa72')
+            ValidationError(func=eth_address, args={'value': '0x8Ba1f109551bD432803012645Ac136ddd64DBa72'})
+    
+        Args:
+            value:
+                Ethereum address string to validate.
+    
+        Returns:
+            (Literal[True]): If `value` is a valid ethereum address.
+            (ValidationError): If `value` is an invalid ethereum address.
+        """  # noqa: E501
+        if not _keccak_flag:
+>           raise ImportError(
+                "Do `pip install validators[crypto-eth-addresses]` to perform `eth_address` validation."
+            )
+E           ImportError: Do `pip install validators[crypto-eth-addresses]` to perform `eth_address` validation.
+
+src\validators\crypto_addresses\eth_address.py:54: ImportError
+_ test_returns_failed_validation_on_invalid_eth_address[0x7c8EE9977c6f96b6b9774b3e8e4Cc9B93B12b2c7g] _
+
+value = '0x7c8EE9977c6f96b6b9774b3e8e4Cc9B93B12b2c7g'
+
+    @pytest.mark.parametrize(
+        "value",
+        [
+            "0x742d35Cc6634C0532925a3b844Bc454e4438f44g",
+            "0x742d35Cc6634C0532925a3b844Bc454e4438f44",
+            "0xAbcdefg1234567890Abcdefg1234567890Abcdefg",
+            "0x7c8EE9977c6f96b6b9774b3e8e4Cc9B93B12b2c72",
+            "0x80fBD7F8B3f81D0e1d6EACAb69AF104A6508AFB1",
+            "0x7c8EE9977c6f96b6b9774b3e8e4Cc9B93B12b2c7g",
+            "0x7c8EE9977c6f96b6b9774b3e8e4Cc9B93B12b2c",
+            "0x7Fb21a171205f3B8d8E4d88A2d2f8A56E45DdB5c",
+            "validators.eth",
+        ],
+    )
+    def test_returns_failed_validation_on_invalid_eth_address(value: str):
+        """Test returns failed validation on invalid eth address."""
+>       assert isinstance(eth_address(value), ValidationError)
+                          ^^^^^^^^^^^^^^^^^^
+
+tests\crypto_addresses\test_eth_address.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\validators\utils.py:91: in wrapper
+    if func(*args, **kwargs)
+       ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = '0x7c8EE9977c6f96b6b9774b3e8e4Cc9B93B12b2c7g'
+
+    @validator
+    def eth_address(value: str, /):
+        """Return whether or not given value is a valid ethereum address.
+    
+        Full validation is implemented for ERC20 addresses.
+    
+        Examples:
+            >>> eth_address('0x9cc14ba4f9f68ca159ea4ebf2c292a808aaeb598')
+            True
+            >>> eth_address('0x8Ba1f109551bD432803012645Ac136ddd64DBa72')
+            ValidationError(func=eth_address, args={'value': '0x8Ba1f109551bD432803012645Ac136ddd64DBa72'})
+    
+        Args:
+            value:
+                Ethereum address string to validate.
+    
+        Returns:
+            (Literal[True]): If `value` is a valid ethereum address.
+            (ValidationError): If `value` is an invalid ethereum address.
+        """  # noqa: E501
+        if not _keccak_flag:
+>           raise ImportError(
+                "Do `pip install validators[crypto-eth-addresses]` to perform `eth_address` validation."
+            )
+E           ImportError: Do `pip install validators[crypto-eth-addresses]` to perform `eth_address` validation.
+
+src\validators\crypto_addresses\eth_address.py:54: ImportError
+_ test_returns_failed_validation_on_invalid_eth_address[0x7c8EE9977c6f96b6b9774b3e8e4Cc9B93B12b2c] _
+
+value = '0x7c8EE9977c6f96b6b9774b3e8e4Cc9B93B12b2c'
+
+    @pytest.mark.parametrize(
+        "value",
+        [
+            "0x742d35Cc6634C0532925a3b844Bc454e4438f44g",
+            "0x742d35Cc6634C0532925a3b844Bc454e4438f44",
+            "0xAbcdefg1234567890Abcdefg1234567890Abcdefg",
+            "0x7c8EE9977c6f96b6b9774b3e8e4Cc9B93B12b2c72",
+            "0x80fBD7F8B3f81D0e1d6EACAb69AF104A6508AFB1",
+            "0x7c8EE9977c6f96b6b9774b3e8e4Cc9B93B12b2c7g",
+            "0x7c8EE9977c6f96b6b9774b3e8e4Cc9B93B12b2c",
+            "0x7Fb21a171205f3B8d8E4d88A2d2f8A56E45DdB5c",
+            "validators.eth",
+        ],
+    )
+    def test_returns_failed_validation_on_invalid_eth_address(value: str):
+        """Test returns failed validation on invalid eth address."""
+>       assert isinstance(eth_address(value), ValidationError)
+                          ^^^^^^^^^^^^^^^^^^
+
+tests\crypto_addresses\test_eth_address.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\validators\utils.py:91: in wrapper
+    if func(*args, **kwargs)
+       ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = '0x7c8EE9977c6f96b6b9774b3e8e4Cc9B93B12b2c'
+
+    @validator
+    def eth_address(value: str, /):
+        """Return whether or not given value is a valid ethereum address.
+    
+        Full validation is implemented for ERC20 addresses.
+    
+        Examples:
+            >>> eth_address('0x9cc14ba4f9f68ca159ea4ebf2c292a808aaeb598')
+            True
+            >>> eth_address('0x8Ba1f109551bD432803012645Ac136ddd64DBa72')
+            ValidationError(func=eth_address, args={'value': '0x8Ba1f109551bD432803012645Ac136ddd64DBa72'})
+    
+        Args:
+            value:
+                Ethereum address string to validate.
+    
+        Returns:
+            (Literal[True]): If `value` is a valid ethereum address.
+            (ValidationError): If `value` is an invalid ethereum address.
+        """  # noqa: E501
+        if not _keccak_flag:
+>           raise ImportError(
+                "Do `pip install validators[crypto-eth-addresses]` to perform `eth_address` validation."
+            )
+E           ImportError: Do `pip install validators[crypto-eth-addresses]` to perform `eth_address` validation.
+
+src\validators\crypto_addresses\eth_address.py:54: ImportError
+_ test_returns_failed_validation_on_invalid_eth_address[0x7Fb21a171205f3B8d8E4d88A2d2f8A56E45DdB5c] _
+
+value = '0x7Fb21a171205f3B8d8E4d88A2d2f8A56E45DdB5c'
+
+    @pytest.mark.parametrize(
+        "value",
+        [
+            "0x742d35Cc6634C0532925a3b844Bc454e4438f44g",
+            "0x742d35Cc6634C0532925a3b844Bc454e4438f44",
+            "0xAbcdefg1234567890Abcdefg1234567890Abcdefg",
+            "0x7c8EE9977c6f96b6b9774b3e8e4Cc9B93B12b2c72",
+            "0x80fBD7F8B3f81D0e1d6EACAb69AF104A6508AFB1",
+            "0x7c8EE9977c6f96b6b9774b3e8e4Cc9B93B12b2c7g",
+            "0x7c8EE9977c6f96b6b9774b3e8e4Cc9B93B12b2c",
+            "0x7Fb21a171205f3B8d8E4d88A2d2f8A56E45DdB5c",
+            "validators.eth",
+        ],
+    )
+    def test_returns_failed_validation_on_invalid_eth_address(value: str):
+        """Test returns failed validation on invalid eth address."""
+>       assert isinstance(eth_address(value), ValidationError)
+                          ^^^^^^^^^^^^^^^^^^
+
+tests\crypto_addresses\test_eth_address.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\validators\utils.py:91: in wrapper
+    if func(*args, **kwargs)
+       ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = '0x7Fb21a171205f3B8d8E4d88A2d2f8A56E45DdB5c'
+
+    @validator
+    def eth_address(value: str, /):
+        """Return whether or not given value is a valid ethereum address.
+    
+        Full validation is implemented for ERC20 addresses.
+    
+        Examples:
+            >>> eth_address('0x9cc14ba4f9f68ca159ea4ebf2c292a808aaeb598')
+            True
+            >>> eth_address('0x8Ba1f109551bD432803012645Ac136ddd64DBa72')
+            ValidationError(func=eth_address, args={'value': '0x8Ba1f109551bD432803012645Ac136ddd64DBa72'})
+    
+        Args:
+            value:
+                Ethereum address string to validate.
+    
+        Returns:
+            (Literal[True]): If `value` is a valid ethereum address.
+            (ValidationError): If `value` is an invalid ethereum address.
+        """  # noqa: E501
+        if not _keccak_flag:
+>           raise ImportError(
+                "Do `pip install validators[crypto-eth-addresses]` to perform `eth_address` validation."
+            )
+E           ImportError: Do `pip install validators[crypto-eth-addresses]` to perform `eth_address` validation.
+
+src\validators\crypto_addresses\eth_address.py:54: ImportError
+____ test_returns_failed_validation_on_invalid_eth_address[validators.eth] ____
+
+value = 'validators.eth'
+
+    @pytest.mark.parametrize(
+        "value",
+        [
+            "0x742d35Cc6634C0532925a3b844Bc454e4438f44g",
+            "0x742d35Cc6634C0532925a3b844Bc454e4438f44",
+            "0xAbcdefg1234567890Abcdefg1234567890Abcdefg",
+            "0x7c8EE9977c6f96b6b9774b3e8e4Cc9B93B12b2c72",
+            "0x80fBD7F8B3f81D0e1d6EACAb69AF104A6508AFB1",
+            "0x7c8EE9977c6f96b6b9774b3e8e4Cc9B93B12b2c7g",
+            "0x7c8EE9977c6f96b6b9774b3e8e4Cc9B93B12b2c",
+            "0x7Fb21a171205f3B8d8E4d88A2d2f8A56E45DdB5c",
+            "validators.eth",
+        ],
+    )
+    def test_returns_failed_validation_on_invalid_eth_address(value: str):
+        """Test returns failed validation on invalid eth address."""
+>       assert isinstance(eth_address(value), ValidationError)
+                          ^^^^^^^^^^^^^^^^^^
+
+tests\crypto_addresses\test_eth_address.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\validators\utils.py:91: in wrapper
+    if func(*args, **kwargs)
+       ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = 'validators.eth'
+
+    @validator
+    def eth_address(value: str, /):
+        """Return whether or not given value is a valid ethereum address.
+    
+        Full validation is implemented for ERC20 addresses.
+    
+        Examples:
+            >>> eth_address('0x9cc14ba4f9f68ca159ea4ebf2c292a808aaeb598')
+            True
+            >>> eth_address('0x8Ba1f109551bD432803012645Ac136ddd64DBa72')
+            ValidationError(func=eth_address, args={'value': '0x8Ba1f109551bD432803012645Ac136ddd64DBa72'})
+    
+        Args:
+            value:
+                Ethereum address string to validate.
+    
+        Returns:
+            (Literal[True]): If `value` is a valid ethereum address.
+            (ValidationError): If `value` is an invalid ethereum address.
+        """  # noqa: E501
+        if not _keccak_flag:
+>           raise ImportError(
+                "Do `pip install validators[crypto-eth-addresses]` to perform `eth_address` validation."
+            )
+E           ImportError: Do `pip install validators[crypto-eth-addresses]` to perform `eth_address` validation.
+
+src\validators\crypto_addresses\eth_address.py:54: ImportError
+=========================== short test summary info ===========================
+FAILED tests/crypto_addresses/test_eth_address.py::test_returns_true_on_valid_eth_address[0x8ba1f109551bd432803012645ac136ddd64dba72]
+FAILED tests/crypto_addresses/test_eth_address.py::test_returns_true_on_valid_eth_address[0x9cc14ba4f9f68ca159ea4ebf2c292a808aaeb598]
+FAILED tests/crypto_addresses/test_eth_address.py::test_returns_true_on_valid_eth_address[0x5AEDA56215b167893e80B4fE645BA6d5Bab767DE]
+FAILED tests/crypto_addresses/test_eth_address.py::test_returns_true_on_valid_eth_address[0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2]
+FAILED tests/crypto_addresses/test_eth_address.py::test_returns_true_on_valid_eth_address[0x742d35Cc6634C0532925a3b844Bc454e4438f44e]
+FAILED tests/crypto_addresses/test_eth_address.py::test_returns_true_on_valid_eth_address[0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984]
+FAILED tests/crypto_addresses/test_eth_address.py::test_returns_true_on_valid_eth_address[0x1234567890123456789012345678901234567890]
+FAILED tests/crypto_addresses/test_eth_address.py::test_returns_true_on_valid_eth_address[0x57Ab1ec28D129707052df4dF418D58a2D46d5f51]
+FAILED tests/crypto_addresses/test_eth_address.py::test_returns_failed_validation_on_invalid_eth_address[0x742d35Cc6634C0532925a3b844Bc454e4438f44g]
+FAILED tests/crypto_addresses/test_eth_address.py::test_returns_failed_validation_on_invalid_eth_address[0x742d35Cc6634C0532925a3b844Bc454e4438f44]
+FAILED tests/crypto_addresses/test_eth_address.py::test_returns_failed_validation_on_invalid_eth_address[0xAbcdefg1234567890Abcdefg1234567890Abcdefg]
+FAILED tests/crypto_addresses/test_eth_address.py::test_returns_failed_validation_on_invalid_eth_address[0x7c8EE9977c6f96b6b9774b3e8e4Cc9B93B12b2c72]
+FAILED tests/crypto_addresses/test_eth_address.py::test_returns_failed_validation_on_invalid_eth_address[0x80fBD7F8B3f81D0e1d6EACAb69AF104A6508AFB1]
+FAILED tests/crypto_addresses/test_eth_address.py::test_returns_failed_validation_on_invalid_eth_address[0x7c8EE9977c6f96b6b9774b3e8e4Cc9B93B12b2c7g]
+FAILED tests/crypto_addresses/test_eth_address.py::test_returns_failed_validation_on_invalid_eth_address[0x7c8EE9977c6f96b6b9774b3e8e4Cc9B93B12b2c]
+FAILED tests/crypto_addresses/test_eth_address.py::test_returns_failed_validation_on_invalid_eth_address[0x7Fb21a171205f3B8d8E4d88A2d2f8A56E45DdB5c]
+FAILED tests/crypto_addresses/test_eth_address.py::test_returns_failed_validation_on_invalid_eth_address[validators.eth]
+17 failed, 1096 passed, 15 xfailed in 3.06s
